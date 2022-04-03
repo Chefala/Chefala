@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chefala
+  labels:
+    app: chefala
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chefala
+  template:
+    metadata:
+      labels:
+        app: chefala
+    spec:
+      containers:
+        - name: chefala
+          image: chefala/chefala
+          ports:
+            - containerPort: 8080
